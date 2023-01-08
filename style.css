@@ -45,7 +45,7 @@ body {
     grid-template-columns: 350px 300px;
     gap: 50px;
     width: 1100px;
-    position: fixed;
+    position: absolute;
     top: 5%;
     margin-left: 50px;
 }
@@ -71,17 +71,34 @@ hr {
     font-weight: bolder;
     margin-bottom: 10px;
 }
-#main-menu ul {
-    max-width: 800px;
-    width: 100%;
-    height: 100%;
+/* .menu-burger {
+    width: 50px;
+    height: 6px;
+    background: white;
+    border-radius: 5px;
     margin: 0px auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    transition: all .3s ease;
 }
 
-#main-menu li {
+
+.menu-burger::before, 
+.menu-burger::after {
+    width: 50px;
+    height: 6px;
+    background: white;
+    border-radius: 5px;
+    margin: 0px auto;
+    transition: all .3s ease;
+}
+
+.menu-burger::before {
+    transform: translateY(-16px);
+}
+.menu-burger::after {
+    transform: translateY(-16px);
+} */
+
+.menu-burger li {
     list-style-type: none;
     margin-left: 20px;
     color: white;
@@ -89,13 +106,13 @@ hr {
     font-size: .9em;
 }
 
-#main-menu a {
-    color: #B9FAF8;
+.menu-burger a {
+    color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
   }
 
-li:hover {
+.menu-burger a:hover {
     color: var(--primary-color);
     transition: all .2s ease;
 }
@@ -103,7 +120,7 @@ li:hover {
 .text {
     margin-top: 10px;
     width: 300px;
-    position: fixed;
+    position: absolute;
     left: 10%;
 }
 
@@ -150,11 +167,35 @@ li:hover {
     align-items: center;
 }
 
-/* @media screen and (max-width: 750px) {
-    nav {
-      display: none;
+@media screen and (max-width: 750px) {
+     .nav {
+        gap: 1px;
+     }
+     .menu-burger {
+        width: 50px;
+        height: 6px;
+        background: white;
+        border-radius: 5px;
+        margin: 0px auto;
+        transition: all .3s ease;
     }
-    #hamburger-menu {
-      display: inline;
+    
+    
+    .menu-burger::before, 
+    .menu-burger::after {
+        width: 50px;
+        height: 6px;
+        background: white;
+        border-radius: 5px;
+        margin: 0px auto;
+        transition: all .3s ease;
     }
-  } */
+    
+    .menu-burger::before {
+        transform: translateY(-16px);
+    }
+    .menu-burger::after {
+        transform: translateY(-16px);
+    }
+    
+  }
