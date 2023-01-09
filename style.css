@@ -13,10 +13,6 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: 'Source Sans Pro', sans-serif;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
 }
 
 .container {
@@ -52,8 +48,11 @@ body {
 
 .logo {
     color: white;
-    font-size: 50px;
-    font-weight: 700px;
+    font-size: 40px;
+    font-weight: 700;
+    width: 190px;
+    position: absolute;
+    /* right: 20%; */
 }
 
 hr {
@@ -71,51 +70,7 @@ hr {
     font-weight: bolder;
     margin-bottom: 10px;
 }
-/* .menu-burger {
-    width: 50px;
-    height: 6px;
-    background: white;
-    border-radius: 5px;
-    margin: 0px auto;
-    transition: all .3s ease;
-}
-
-
-.menu-burger::before, 
-.menu-burger::after {
-    width: 50px;
-    height: 6px;
-    background: white;
-    border-radius: 5px;
-    margin: 0px auto;
-    transition: all .3s ease;
-}
-
-.menu-burger::before {
-    transform: translateY(-16px);
-}
-.menu-burger::after {
-    transform: translateY(-16px);
-} */
-
-.menu-burger li {
-    list-style-type: none;
-    margin-left: 20px;
-    color: white;
-    cursor: pointer;
-    font-size: .9em;
-}
-
-.menu-burger a {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-
-.menu-burger a:hover {
-    color: var(--primary-color);
-    transition: all .2s ease;
-}
+/*  */
 
 .text {
     margin-top: 10px;
@@ -153,6 +108,11 @@ hr {
     align-items: center;
 }
 
+h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
 .fa-farm {
     /* width: 100px;
     height: 100px; */
@@ -169,33 +129,130 @@ hr {
 
 @media screen and (max-width: 750px) {
      .nav {
-        gap: 1px;
+        width: 350px;
+        gap: 0px;
      }
-     .menu-burger {
-        width: 50px;
-        height: 6px;
-        background: white;
-        border-radius: 5px;
-        margin: 0px auto;
-        transition: all .3s ease;
+
+     #main-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        transition: all .5s ease;
+        position: fixed;
+        top: 0px;
+        right: 30px;
     }
     
-    
-    .menu-burger::before, 
-    .menu-burger::after {
+    .menu-burger {
         width: 50px;
         height: 6px;
-        background: white;
-        border-radius: 5px;
-        margin: 0px auto;
-        transition: all .3s ease;
+        background-color: white;
+        border-radius: 1em;
+        transition: all .5s ease;
+    
+    }
+    
+    .menu-burger::before,
+    .menu-burger::after {
+        content: " ";
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background-color: white;
+        border-radius: 1em;
+        transition: all .5s ease;
     }
     
     .menu-burger::before {
         transform: translateY(-16px);
     }
     .menu-burger::after {
-        transform: translateY(-16px);
+        transform: translateY(16px);
     }
     
+    li {
+        /* position: fixed;
+        right: -100px; */
+        display: none;
+    }
+
+    
+    .open .menu-burger{
+        transform: translate(-50px);
+        background-color: transparent;
+    }
+    
+    .open .menu-burger::before{
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+    .open .menu-burger::after{
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+
+   .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+   }
+
+    .icons {
+        display: grid;
+
+    }
+
+    .icon1 {
+        width: 210px;
+        margin-bottom: 50px;
+    }
+    .icon2 {
+        width: 210px;
+        margin-bottom: 50px;
+    }
+    .icon3 {
+        width: 210px;
+        margin-bottom: 50px;
+    }
+    .icon4 {
+        width: 210px;
+        margin-bottom: 50px;
+    }
+
+
+}
+
+@media screen and (min-width: 751px){
+    .nav {
+        width: 85vw;
+        gap: 0px;
+     }
+    .menu-burger li {
+        list-style-type: none;
+        margin-left: 20px;
+        color: white;
+        cursor: pointer;
+        font-size: .9em;
+        display: inline-block;
+    }
+
+    #main-menu {
+        width: 400px;
+        /* height: 90px; */
+        float: right;
+    }
+        
+
+.menu-burger a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
   }
+
+.menu-burger a:hover {
+    color: var(--primary-color);
+    transition: all .2s ease;
+}
+}
